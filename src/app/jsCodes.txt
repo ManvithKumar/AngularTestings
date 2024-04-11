@@ -1,0 +1,110 @@
+Missing number :
+
+class Solution{
+    missingNumber(array,n){
+     let expSum = (n *(n+1)) / 2;
+     
+     let arrSum = array.reduce((acc,cur) => acc+cur,0);
+     
+     let missingNum = expSum - arrSum;
+     
+     return missingNum;
+     
+    }
+}
+
+//Second Largest Number in an array
+class Solution{
+    print2largest(arr,n){
+        
+        let uniqueArr = [...new Set(arr)];
+        
+        let arr2 = uniqueArr.sort((a,b)=>{
+            return b -a  
+        })
+        
+        if (uniqueArr.length < 2) {
+            return -1;
+        } else {
+        return uniqueArr[1];
+            
+        }   
+    }
+}
+
+//Prime Numbers 
+ function isPrime(num)
+    {
+        if(num < 2)
+        {
+            return false
+        }
+        for(let i =2;i<=Math.sqrt(num);i++)
+        {
+            if(num % i === 0)
+            {
+                return false
+            }
+        }
+        return true
+    }
+
+    function generatePrimeNumbers(start,end)
+    {
+        primeList =[];
+
+        for(let i = start;i<= end;i++)
+        {
+            if(isPrime(i))
+            {
+                primeList.push(i)
+            }
+        }
+        return primeList;
+    }
+
+    console.log(generatePrimeNumbers(10,20))
+
+
+
+//Armstrong Numbers
+
+function armstrong(number) {
+    var og = number;
+    var result = 0;
+    while (og !== 0) {
+        var remainder = og % 10;
+        result = result + Math.pow(remainder, 3);
+        og = Math.floor(og / 10); 
+    }
+  if(number === result)
+  {
+    return "Armstrong Number"
+  }
+  else{
+    return "Not a Armstrong Number"
+  }
+}
+
+console.log(armstrong(153)); 
+
+
+//Count the frequency of letters in the string
+function countLetters(str) {
+    const frequency = {};
+    
+    for (let char of str) {
+
+        if (/^[a-zA-Z]$/.test(char))
+        {
+            char = char.toLowerCase();
+            frequency[char] = (frequency[char] || 0) + 1;
+        }
+    } 
+    return frequency;
+}
+
+const inputString = "Hello World!";
+const letterFrequency = countLetters(inputString);
+
+console.log(letterFrequency);
