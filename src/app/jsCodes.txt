@@ -120,3 +120,8 @@ function reverseString(str)
 console.log(reverseString("Manvith"))
 
 
+//Sorting an array of strings by length 
+
+const inputArray = ["You", "are", "beautiful", "looking"];
+const sortedArray = inputArray.sort((a, b) => a.length - b.length);
+console.log(sortedArray);
