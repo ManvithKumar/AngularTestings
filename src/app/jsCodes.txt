@@ -108,3 +108,15 @@ const inputString = "Hello World!";
 const letterFrequency = countLetters(inputString);
 
 console.log(letterFrequency);
+
+
+// Reverse a string
+
+function reverseString(str)
+{
+    return Array.from(str).reverse.join('');
+}
+
+console.log(reverseString("Manvith"))
+
+
