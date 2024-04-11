@@ -1,0 +1,21 @@
+<div class="file-upload">
+    <label for="fileInput">Choose file</label>
+    <input id="fileInput" type="file" (change)="onFileChanges($event)">
+  </div>
+  
+  <div class="file-list">
+    <div *ngFor="let file of allFiles; let i = index" class="file">
+      <div class="d-flex">
+        <div class="name">{{ file.name }}</div>
+        <button class="remove"(click)="removeFile(i)">X</button>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-inner" [style.width.%]="progress">{{ progress }}%</div>
+        <span>{{  bytesToKB(file.size) }}KB</span>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  

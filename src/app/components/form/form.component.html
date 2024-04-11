@@ -1,0 +1,19 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="firstName" required #fname="ngModel">
+      <small *ngIf="fname.invalid && fname.touched">FirstName is required</small>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="lastName" required #lname="ngModel">
+      <small *ngIf="lname.invalid && lname.touched">LastName is required</small>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required email #emailID="ngModel">
+      <small *ngIf="emailID.invalid && emailID.touched">Email is required</small>
+    </div>
+    <button type="submit" class="btn btn-primary"  [disabled]="myForm.invalid">Submit</button>
+  </form>
+  

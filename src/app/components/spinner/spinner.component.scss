@@ -1,0 +1,60 @@
+.loader-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+
+.loader {
+  top: 23%;
+  left: 40%;
+  width: 284px;
+  height: 301px;
+  position: relative;
+  --c: no-repeat linear-gradient(#25b09b 0 0);
+  background: var(--c) center/100% 57px,
+    var(--c) center/57px 212%;
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--c) 0 0,
+    var(--c) 100% 0,
+    var(--c) 0 100%,
+    var(--c) 100% 100%;
+  background-size: 43.5px 40.5px;
+  animation: l16 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+@keyframes l16 {
+  33% {
+    inset: -10px;
+    transform: rotate(0deg)
+  }
+
+  66% {
+    inset: -10px;
+    transform: rotate(90deg)
+  }
+
+  100% {
+    inset: 0;
+    transform: rotate(90deg)
+  }
+}
+
+@media only screen and (max-width :500px) {
+  .loader[_ngcontent-ng-c147582745] {
+    top: 35%;
+    left: 25%;
+    width: 184px;
+    height: 146px;
+    position: relative;
+    --c: no-repeat linear-gradient(#25b09b 0 0);
+    background: var(--c) center/100% 35px, var(--c) center/46px 212%;
+}
+}

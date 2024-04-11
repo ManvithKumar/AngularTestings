@@ -1,1 +1,126 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --primary-color:black;
+    --accent-color:rgb(55, 120, 231);
+    --background-color:rgb(244, 223, 226);
+
+    --dark-primary-color:white;
+    --dark-background-color:rgb(46, 45, 45);
+}
+.light-theme{
+    color: var(--primary-color);
+    background: var(--background-color);
+}
+.dark-theme{
+    color: var(--dark-primary-color);
+    background: var(--dark-background-color) !important;
+}
+
+
+.child1{
+    width: 200px;
+    height: 200px;
+    background-color: greenyellow;
+}
+.child2{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 95, 47);
+}
+.parent{
+    width: 800px;
+    height: 800px;
+    background-color: rgb(155, 235, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.image-slider{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    max-width: 400px;
+    overflow: scroll;
+}
+.img-contianer{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.img-contianer > img{
+   width: 200px;
+   height: 200px;
+}
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.create-container {
+    max-width: 512px;
+    padding: 42px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.form-container {
+    min-height: 97vh;
+    width: 800px;
+    padding: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.field{
+    padding: 5px;
+    width: fit-content;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+small{
+    color: rgb(223, 68, 68);
+}
+.option-div {
+    position: absolute;
+    background: #ffffffd1;
+    margin-left: 134px;
+    margin-top: 11px;
+}
+.option-div li{
+    border-bottom: 1px solid black;
+    padding: 10px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+.skill-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 100px;
+    max-height: 112px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.project-container{
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.ext-hr{
+    border: none !important;
+    height: 4px !important;
+}

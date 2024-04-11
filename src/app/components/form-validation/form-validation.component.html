@@ -1,0 +1,29 @@
+<!-- form-validation.component.html -->
+<!-- <form [formGroup]="userForm">
+    <div formArrayName="users">
+      <form  *ngFor="let user of userForm.controls.users.controls; let i =index" [formGroupName]="i" >
+        <input type="text" formControlName="username" placeholder="Username">
+        <input type="text" formControlName="phoneNumber" placeholder="Phone Number">
+      </form>
+    </div>
+  </form> -->
+
+<div *ngFor="let user of userForm.controls.users.controls">
+<span>Users : </span>{{user.value.username}}
+</div>
+  <button class="btn btn-primary" (click)="openPop()">Add User</button>
+  
+
+<ng-template #addpopup>
+   <div class="p-5">
+    <form [formGroup]="userForm">
+        <div formArrayName="users">
+          <form  *ngFor="let user of userForm.controls.users.controls; let i =index" [formGroupName]="i" >
+            <input type="text" formControlName="username" placeholder="Username">
+            <input type="text" formControlName="phoneNumber" placeholder="Phone Number">
+          </form>
+        </div>
+        <button (click)="addUser()">Submit</button>
+      </form>
+   </div>
+</ng-template>

@@ -1,0 +1,401 @@
+
+
+
+<div class="container shadow p-3 bg-white rounded">
+    <mat-icon svgIcon="crab"></mat-icon>
+    <div class="d-flex justify-content-between">
+        <h2>{{ "Resume Form :"  | uppercase }}</h2>
+        <div>
+            <label >Select Accent Color</label><br/>
+            <input type="color" (change)="changeAccentColor($event)">
+        </div>
+    </div>
+
+    <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Personal Information </button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <ng-template>
+                <form [formGroup]="userform" class="form-group" (ngSubmit)="onFormSubmit()">
+                    <div>
+                        <label for="">FirstName :</label>
+                        <input type="text" class="form-control" formControlName="firstName" placeholder="FirstName">
+                        <small *ngIf="userform.get('firstName').errors && userform.get('firstName').touched">This field is required</small>
+                    </div>
+                    <div>
+                        <label for="">LastName :</label><br/>
+                        <input type="text" class="form-control" formControlName="lastName" placeholder="LastName">
+                        <small *ngIf="userform.get('lastName').errors && userform.get('lastName').touched">This field is required</small>
+                    </div>
+                    <div>
+                        <label for="">Profile Photo :</label><br/>
+                        <input type="file" class="form-control" formControlName="profileImage" accept="jpeg/png" >
+                        <!-- <small *ngIf="userform.get('email').errors && userform.get('email').touched">This field is required</small> -->
+                    </div>
+                    <div>
+                        <label for="">Date Of Birth :</label><br/>
+                        <input type="date" class="form-control" formControlName="dob" >
+                        <!-- <small *ngIf="userform.get('email').errors && userform.get('email').touched">This field is required</small> -->
+                    </div>
+                    <div>
+                        <label for="">Email :</label><br/>
+                        <input type="email" class="form-control" formControlName="email" placeholder="abc@gmail.com">
+                        <small *ngIf="userform.get('email').errors && userform.get('email').touched">This field is required</small>
+                    </div>
+                    <div>
+                        <label for="">Phone Number :</label><br/>
+                        <input type="text" class="form-control" formControlName="phoneNumber" placeholder="Mobile Number">
+                        <small *ngIf="userform.get('phoneNumber').errors && userform.get('phoneNumber').touched">This field is required</small>
+                    </div>
+
+
+                    <div ngbAccordion>
+                        <div ngbAccordionItem>
+                          <h2 ngbAccordionHeader>
+                            <button ngbAccordionButton>Additional Links and COntacts</button>
+                          </h2>
+                          <div ngbAccordionCollapse>
+                            <div ngbAccordionBody>
+                                <div formGroupName="links">
+                                    <div class="d-flex align-items-center gap-2 m-3">
+                                        <mat-icon svgIcon="linkedIn"></mat-icon>
+                                        <input type="text" class="form-control" placeholder="lindedIn" formControlName="linkedIn">
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 m-3">
+                                        <mat-icon svgIcon="github"></mat-icon>
+                                        <input type="text" class="form-control" placeholder="Github" formControlName="github">
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+            
+                    <div class="form-group mt-3">
+                        <h3>Objective :</h3>
+                       <textarea name="" id="" cols="150" rows="3" formControlName="objective"
+                       placeholder="Enter a Objective" class="form-control"
+                       ></textarea>
+                    </div>
+                </form>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Education Qualifications</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+                <div class="d-flex justify-content-between mt-4"> 
+                    <h4>Education Qualifications :</h4>
+                    <button class="btn btn-primary" (click)="openEducationPopup()">Add Qualification</button>
+                    </div>
+                    <div>
+                    <div class="project-container ">
+                        <div *ngFor="let qualify of userform.value.education;let i=index" class=" d-flex justify-content-between p-3 shadow-sm">
+                        <div class="d-flex" style="gap: 90px;">
+                            <span>{{i+1}}</span> 
+                            <span><strong>{{qualify.instituteName}}</strong></span>
+                            <span>{{qualify.grade}}</span>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <span class="bg-warning" style="padding: 4px; border-radius: 6px;" (click)="selectProject(qualify,i)"><fa-icon [icon]="FaPencil"></fa-icon></span>
+                            <span class="bg-danger" style="padding: 4px; border-radius: 6px;" (click)="deleteProject(i)"><fa-icon [icon]="FaTrash" style="color: white;"></fa-icon></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Skills</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <ng-template>
+                <div class="mt-3">  
+                    <div class="d-flex justify-content-between" > 
+                        <h4>My Skills :</h4>
+                        <button class="btn btn-primary" (click)="openSkillPopup()">Add Skills</button>
+                    </div>
+                    <div class="skill-container ">
+                        <div *ngFor="let skill of userform.value.skills;let i=index" class=" d-flex justify-content-between p-3 shadow-sm"
+                    style="max-width: 400px;"
+                    >
+                        <div class="d-flex" style="gap: 90px;">
+                            <span>{{i+1}}</span>
+                            <span><strong>{{skill}}</strong></span>
+                        </div>
+                        <div>
+                            <span class="bg-danger" style="padding: 4px; border-radius: 6px;" (click)="deleteSkill(i)"><fa-icon [icon]="FaTrash" style="color: white;"></fa-icon></span>
+                        </div>
+                    </div>
+                   </div> 
+                    </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Projects</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <div class="d-flex justify-content-between mt-4"> 
+                <h4>My Projects :</h4>
+                <button class="btn btn-primary" (click)="openProjectPopup()">Add Project</button>
+                </div>
+                <div>
+                <div class="project-container ">
+                    <div *ngFor="let project of userform.value.projects;let i=index" class=" d-flex justify-content-between p-3 shadow-sm">
+                    <div class="d-flex" style="gap: 90px;">
+                        <span>{{i+1}}</span> 
+                        <span><strong>{{project.projectName}}</strong></span>
+                        <span>{{project.projectDescription | trimData:30 }}</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <span class="bg-warning" style="padding: 4px; border-radius: 6px;" (click)="selectProject(project,i)"><fa-icon [icon]="FaPencil"></fa-icon></span>
+                        <span class="bg-danger" style="padding: 4px; border-radius: 6px;" (click)="deleteProject(i)"><fa-icon [icon]="FaTrash" style="color: white;"></fa-icon></span>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Achievements</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <div class="d-flex justify-content-between mt-4"> 
+                <h4>My Achievements :</h4>
+                <button class="btn btn-primary" (click)="openAchievementPopup()">Add Achievements</button>
+                </div>
+                <div>
+                <div class="project-container ">
+                    <div *ngFor="let achievement of userform.value.achievements;let i=index" class=" d-flex justify-content-between p-3 shadow-sm">
+                    <div class="d-flex" style="gap: 90px;">
+                        <li>
+                            <span><strong>{{achievement}}</strong></span>
+                        </li>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <span class="bg-danger" style="padding: 4px; border-radius: 6px;" (click)="deleteAchievement(i)"><fa-icon [icon]="FaTrash" style="color: white;"></fa-icon></span>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+
+       
+
+       <div class="mt-3 d-flex gap-3" id="btn-group">
+        <button type="submit" class="btn btn-success" [disabled]="userform.invalid">Submit</button>
+        <button type="button" class="btn btn-info" [ngStyle]="{ 'display':userform.valid ? 'block':'none' }"
+        (click)="generatePdf()"
+        >Print</button>
+    </div>
+
+</div>
+
+
+<ng-template #skillModal>
+    <div class="p-4">
+       <form  #myForm="ngForm">
+        <h5>Skill Name :</h5>
+        <input type="text" placeholder="Enter the skill " class="form-control" [formControl]="skillControl"/>
+        <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-primary" (click)="addSkill()">Add Skill</button>
+            <button type="button" class="btn btn-secondary" (click)="closeSkillPopup()">Cancel</button>
+        </div>
+       </form>
+    </div>
+</ng-template>
+
+<ng-template #projectModal>
+    <div class="p-4">
+       <form [formGroup]="projectGroup">
+        <div >
+            <h5>Project Name :</h5>
+            <input type="text" placeholder="Enter the Project Name " class="form-control" formControlName="projectName"/>
+        </div>
+        <div class="mt-3">
+            <h5>Description :</h5>
+            <textarea  id="" cols="53" rows="6" placeholder="Enter some description about your project" formControlName="projectDescription"></textarea>
+        </div>
+        <div>
+            <h5>Year of Compeletion :</h5>
+            <input type="text" placeholder="Year" formControlName="yearOfCompletiton" class="form-control">
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-primary" (click)="addProject()">Add Project</button>
+            <button type="button" class="btn btn-secondary" (click)="closeProjectPopup()">Cancel</button>
+        </div>
+       </form>
+    </div>
+</ng-template>
+
+<ng-template #education>
+    <div class="p-4">
+       <form [formGroup]="educationGroup">
+        <div >
+            <h5>Institue Name :</h5>
+            <input type="text" placeholder="Enter the Project Name " class="form-control" formControlName="instituteName"/>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="mt-3">
+                <h5>Passing Year :</h5>
+                <input type="text" placeholder="Year of Passing" class="form-control" formControlName="passOutYear">
+            </div>
+            <div class="mt-3">
+                <h5>Grades :</h5>
+                <input type="text" placeholder="Grades in percentage"  class="form-control" formControlName="grades">
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+            <button type="button" class="btn btn-primary" (click)="addEducation()">Add Qualifications</button>
+            <button type="button" class="btn btn-secondary" (click)="closeEducationPopup()">Cancel</button>
+        </div>
+       </form>
+    </div>
+</ng-template>
+
+
+<ng-template #achievements>
+    <div class="p-4">
+        <form>
+            <div class="form-group">
+                <label for="">Add Achievements</label>
+                <input type="text" class="form-control" placeholder="Enter achievements here" [formControl]="achievementControl">
+            </div>
+            <div class="d-flex justify-content-between mt-3">
+                <button type="button" class="btn btn-primary" (click)="addAchievements()">Add Qualifications</button>
+                <button type="button" class="btn btn-secondary" (click)="closeAchievementPopup()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+
+
+<hr/>
+
+
+    <div class="container" id="contentToConvert" *ngIf="userform.valid">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h1 [ngStyle]="{'color': accentColor}" >{{userform.value.firstName}}</h1>
+                <h1 [ngStyle]="{'color': accentColor}">{{userform.value.lastName}}</h1>
+            </div>
+            <div>
+               <div class="d-flex gap-1 m-1">
+                    <mat-icon svgIcon="letter"></mat-icon>
+                    <a>{{userform.value.email}}</a><br/>
+               </div>
+               <div class="d-flex gap-1 m-1">
+                    <mat-icon svgIcon="linkedIn"></mat-icon>
+                    <a *ngIf="userform.value.links.linkedIn">{{userform.value.links.linkedIn}}</a><br/>
+               </div>
+               <div class="d-flex gap-1 m-1">
+                    <mat-icon svgIcon="github"></mat-icon>
+                    <a *ngIf="userform.value.links.github">{{userform.value.links.github}}</a><br/>
+               </div>
+               <div class="d-flex gap-1 m-1">
+                    <fa-icon [icon]="FaPhone"></fa-icon>
+                    <a>{{userform.value.phoneNumber}}</a><br/>
+               </div>
+            </div>
+        </div>
+    
+        <hr class="ext-hr" [ngStyle]="{'background-color': accentColor}"/>
+            <div class="mb-2" >
+               <div class="d-flex gap-3" [ngStyle]="{'color': accentColor}">
+                <mat-icon svgIcon="objective"></mat-icon>
+               <h3>Objective :</h3>
+               </div>
+                <span>{{userform.value.objective}}</span>
+            </div>
+        <hr class="ext-hr" [ngStyle]="{'background-color': accentColor}"/>
+            <div>
+                <div [ngStyle]="{'color': accentColor}" class="d-flex gap-3">
+                    <mat-icon svgIcon="education"></mat-icon>
+                    <h3 >Education :</h3>
+                </div>
+                <div *ngFor="let qualify of userform.value.education" class="m-3">
+                    <h5 [ngStyle]="{'color': accentColor}">University/College</h5>
+                    <h4>{{qualify.instituteName}}</h4>
+                    <h2><strong>{{qualify.grades}}</strong>%</h2>
+                    <span>Year of Completion <strong>{{qualify.passOutYear}}</strong></span>
+                </div>
+            </div>
+    
+        <hr class="ext-hr" [ngStyle]="{'background-color': accentColor}"/>
+            <div>
+               <div [ngStyle]="{'color': accentColor}" class="d-flex gap-3">
+                <mat-icon svgIcon="skills"></mat-icon>
+                <h3 >Skills :</h3>
+               </div>
+                <li *ngFor="let skill of userform.value.skills" class="m-3">
+                {{skill}}
+                </li>
+            </div>
+        
+        <hr class="ext-hr" [ngStyle]="{'background-color': accentColor}"/>
+            <div>
+                <div [ngStyle]="{'color': accentColor}" class="d-flex gap-3">
+                    <mat-icon svgIcon="projects"></mat-icon>
+                    <h3>Projects :</h3>
+                </div>
+                <div *ngFor="let project of userform.value.projects" class="m-3">
+                   <div class="d-flex justify-content-between">
+                        <h2>{{project.projectName}}</h2>
+                        <span>{{project.yearOfCompletiton}}</span>
+                   </div>
+                   <div>
+                        <span>{{project.projectDescription}}</span>
+                   </div>
+                </div>
+            </div>
+
+        <hr class="ext-hr" [ngStyle]="{'background-color': accentColor}"/>
+
+            <div>
+                <div [ngStyle]="{'color': accentColor}" class="d-flex gap-3">
+                    <mat-icon svgIcon="acheivements"></mat-icon>
+                    <h3>Achievements :</h3>
+                </div>
+                <li *ngFor="let achievement of userform.value.achievements" class="m-3"> 
+                </li>
+            </div>
+
+    </div>

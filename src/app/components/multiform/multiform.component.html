@@ -1,0 +1,48 @@
+<div>
+  <div
+    class="field"
+    *ngFor="let formvalue of data"
+    [ngStyle]="{ 'margin-bottom': margin + 'px' }"
+  >
+    <div class="d-flex justify-content-between">
+        <span>{{ formvalue.label }}</span>
+        <div ngbDropdown class="d-inline-block">
+            <span   id="dropdownBasic1" ngbDropdownToggle>
+            <fa-icon [icon]="faGear"></fa-icon>
+            </span>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem>Edit</button>
+                <button ngbDropdownItem>Delete</button>
+                <button ngbDropdownItem>Details</button>
+            </div>
+        </div>
+    </div>
+    <div [ngSwitch]="formvalue.feildType">
+      <div *ngSwitchCase="'text'">
+        <input type="text" />
+      </div>
+      <div *ngSwitchCase="'number'">
+        <input type="number" name="" id="" />
+      </div>
+      <div *ngSwitchCase="'file'">
+        <input type="file" />
+      </div>
+      <div *ngSwitchCase="'date'">
+        <input type="date" />
+      </div>
+      <div *ngSwitchCase="'textarea'">
+        <textarea [cols]="cols" [rows]="rows"></textarea>
+        <div class="d-flex gap-3">
+          <div>
+            <label for="">Column :</label><br/>
+            <input type="number" [(ngModel)]="cols" />
+          </div>
+          <div>
+            <label for="">Rows :</label><br/>
+            <input type="number" [(ngModel)]="rows" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

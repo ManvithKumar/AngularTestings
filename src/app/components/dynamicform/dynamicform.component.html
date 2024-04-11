@@ -1,0 +1,53 @@
+<div>
+  <div class="d-flex" style="gap: 400px;">
+    <div>
+      <button class="btn btn-primary" (click)="openModal()">
+        Add Fields +
+      </button>
+      <div>
+        <label for="">Select margin gap :</label><br />
+        <input type="range" min="10" max="50" (change)="selectMargin($event)" />
+      </div>
+    </div>
+    <div >
+      <div class="form-container">
+        <h3 *ngIf="!editForm"  (click)="startEditing()">{{formName}}</h3>
+        <input *ngIf="editForm"  type="text"  [(ngModel)]="formName" (blur)="saveChanges()" style="width: 100%;border: none;">
+        <strong
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi veniam
+          officiis cupiditate cumque. Porro tempore eaque eum, optio iusto, magni
+          quae exercitationem, assumenda autem quisquam ducimus soluta numquam
+          sapiente explicabo!</strong
+        >
+        <hr />
+        <app-multiform [data]="myFormList" [margin]="margin"
+        
+        
+        ></app-multiform>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<ng-template class="create-container" style="padding: 20px" #content>
+  <button class="btn btn-close" (click)="closeModal()"></button>
+  <div class="form-group">
+    <label for="">Label Name :</label>
+    <input class="form-control" type="text" [(ngModel)]="labelName" />
+  </div>
+  <div class="form-group">
+    <label for="">Feild type :</label>
+    <select
+      class="custom-select custom-select-lg mb-3"
+      (change)="onSelectChange($event)"
+    >
+      <option *ngFor="let type of feildTypes" [value]="type.type">
+        {{ type.type }}
+      </option>
+    </select>
+  </div>
+  <div>
+    <button class="btn btn-primary" (click)="createFeild()">Add Field</button>
+  </div>
+</ng-template>

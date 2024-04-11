@@ -1,0 +1,59 @@
+.file-upload {
+    margin-bottom: 20px;
+  }
+  
+  .file-upload input[type="file"] {
+    display: none;
+  }
+  
+  .file-upload label {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .file-upload label:hover {
+    background-color: #45a049;
+  }
+  
+  .file-list {
+    margin-top: 10px;
+  }
+  
+  .file-list .file {
+   
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+  
+  .file-list .file .name {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .file-list .file .remove {
+    cursor: pointer;
+  }
+  
+  .progress-bar {
+    display: block;
+    width: 50%;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress-bar-inner {
+    width: 0;
+    height: 100%;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+  
