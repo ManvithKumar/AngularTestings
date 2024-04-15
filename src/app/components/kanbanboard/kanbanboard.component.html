@@ -1,0 +1,24 @@
+<div class="board">
+  <div class="column">
+    <div class="column-header">To Do</div>
+    <div draggable="true" (dragstart)="dragOnStart($event)" class="card" *ngFor="let task of getTasks('To Do')">
+      <span>{{ task.taskName }}</span>
+    </div>
+  </div>
+  <div class="column">
+    <div class="column-header">In Progress</div>
+    <div
+      draggable="true"
+      class="card"
+      *ngFor="let task of getTasks('In Progress')"
+    >
+      <span>{{ task.taskName }}</span>
+    </div>
+  </div>
+  <div class="column">
+    <div class="column-header">Done</div>
+    <div draggable="true" class="card" *ngFor="let task of getTasks('Done')">
+      <span>{{ task.taskName }}</span>
+    </div>
+  </div>
+</div>
