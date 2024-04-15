@@ -147,3 +147,16 @@ const num2 = 15;
 
 console.log("HCF of", num1, "and", num2, "is:", hcf(num1, num2));
 console.log("LCM of", num1, "and", num2, "is:", lcm(num1, num2));
+
+
+//Sorting methods :
+// const names = ["Manvith","Varun","Mike","Abhi"]
+const names = [5,66,6,21,30]// While dealing with the numbers it will only into the first digit of the element
+console.log(names.sort());//[ 21, 30, 5, 6, 66 ]
+
+console.log(people.sort((a,b)=>  a.age - b.age ))// Sort the Age
+
+console.log(people.sort((a, b) =>  a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1));// Sort the name
+
+console.log(people.sort((a, b) => new Date(a.dateOfBirth) - new Date(b.dateOfBirth)))// sort the dateOfBirth
+
