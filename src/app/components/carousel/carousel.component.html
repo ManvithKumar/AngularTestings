@@ -1,0 +1,6 @@
+<div class="carousel" (mouseenter)="stopAutoplay()" (mouseleave)="startAutoplay()">
+    <button (click)="prev()">Previous</button>
+    <img [src]="images[currentIndex]" alt="Carousel Image">
+    <button (click)="next()">Next</button>
+  </div>
+  
