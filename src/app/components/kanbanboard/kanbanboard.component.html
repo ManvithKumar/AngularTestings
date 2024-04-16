@@ -1,0 +1,20 @@
+<div class="board">
+  <div class="column">
+    <div class="column-header"  (dragover)="OnDragOver($event)" (drop)="dropOver($event,'To Do')">To Do</div>
+    <div draggable="true" (dragstart)="dragOnStart($event,task)" class="card" *ngFor="let task of getTasks('To Do')">
+      <span>{{ task.taskName }}</span>
+    </div>
+  </div>
+  <div class="column">
+    <div class="column-header" (dragover)="OnDragOver($event)"  (drop)="dropOver($event,'In Progress')">In Progress</div>
+    <div draggable="true" class="card"  (dragstart)="dragOnStart($event,task)"  *ngFor="let task of getTasks('In Progress')">
+      <span>{{ task.taskName }}</span>
+    </div>
+  </div>
+  <div class="column">
+    <div class="column-header" (dragover)="OnDragOver($event)"  (drop)="dropOver($event,'Done')">Done</div>
+    <div draggable="true" class="card" *ngFor="let task of getTasks('Done')" (dragstart)="dragOnStart($event,task)">
+      <span>{{ task.taskName }}</span>
+    </div>
+  </div>
+</div>

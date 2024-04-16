@@ -32,7 +32,7 @@ import { FormReactiveComponent } from './components/form-reactive/form-reactive.
 import { MatIconModule } from '@angular/material/icon';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { KanbanboardComponent } from './components/kanbanboard/kanbanboard.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,8 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
     MultiformComponent,
     FormFields,
     MyFormComponent,
-    FormReactiveComponent
+    FormReactiveComponent,
+    KanbanboardComponent
   ],
   imports: [
     BrowserModule,

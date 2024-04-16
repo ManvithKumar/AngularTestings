@@ -22,5 +22,6 @@ export class MyFormComponent {
     } else {
       console.log('Form invalid');
     }
+    
   }
 }
