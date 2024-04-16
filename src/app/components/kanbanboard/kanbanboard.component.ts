@@ -85,6 +85,8 @@ export class KanbanboardComponent {
       "status": "In Progress"
     }
   ]
+
+  currentElement:any;
   
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
@@ -94,10 +96,28 @@ export class KanbanboardComponent {
     return this.tasks.filter((task)=> task.status === status )
   }
 
-  dragOnStart(event:Event)
+  dragOnStart(event:Event,item:any)
   {
     this.el.nativeElement = event.target;
     this.renderer.addClass(this.el.nativeElement,'dragged')  
+    this.currentElement = item
+    }
+
+  dropOver(event:any,status:string)
+  {
+    event.preventDefault()
+    let filteredTask = this.tasks.find((task)=> task.taskId === this.currentElement.taskId)
+    console.log(filteredTask);
+    
+    if(filteredTask != undefined)
+      {
+        filteredTask.status = status
+      }
+    this.currentElement = null
   }
 
+  OnDragOver(event:any)
+  {
+    event.preventDefault()
+  }
 }
