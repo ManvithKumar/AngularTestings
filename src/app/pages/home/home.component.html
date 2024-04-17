@@ -1,2 +1,8 @@
 <p>home works!</p>
 <button (click)="navigateToAbout()">Navigate</button>
+<ng-container *ngFor="let user of userData" >
+    <p>{{user.name}}</p>
+</ng-container>
+  
+  <button (click)="prevPage()" [disabled]="currentPage === 0">Previous</button>
+  <button (click)="nextPage()">Next</button>

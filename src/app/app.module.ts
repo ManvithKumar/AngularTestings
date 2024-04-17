@@ -70,7 +70,8 @@ import { KanbanboardComponent } from './components/kanbanboard/kanbanboard.compo
     NgbDropdownModule,
     MatIconModule,
     NgbCollapseModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+  
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:Headers,multi:true}
