@@ -126,3 +126,55 @@ const inputArray = ["You", "are", "beautiful", "looking"];
 const sortedArray = inputArray.sort((a, b) => a.length - b.length);
 console.log(sortedArray);
 
+function areAnagrams(str1, str2) {
+  // Remove non-alphanumeric characters and convert to lowercase
+  const cleanStr1 = str1.replace(/[^\w]/g, '').toLowerCase();
+  const cleanStr2 = str2.replace(/[^\w]/g, '').toLowerCase();
+
+  // Sort the characters in the strings
+  const sortedStr1 = cleanStr1.split('').sort().join('');
+  const sortedStr2 = cleanStr2.split('').sort().join('');
+
+  // Compare the sorted strings
+  return sortedStr1 === sortedStr2;
+}
+
+// Example usage:
+const str1 = "listen";
+const str2 = "silent";
+console.log(areAnagrams(str1, str2)); // Output: true
+=======
+// Function to find the HCF (GCD) of two numbers
+function hcf(a, b) {
+    if (b === 0) {
+        return a;
+    } else {
+        return hcf(b, a % b);
+    }
+}
+
+// Function to find the LCM of two numbers
+function lcm(a, b) {
+    return (a * b) / hcf(a, b);
+}
+
+// Example usage
+const num1 = 12;
+const num2 = 15;
+
+console.log("HCF of", num1, "and", num2, "is:", hcf(num1, num2));
+console.log("LCM of", num1, "and", num2, "is:", lcm(num1, num2));
+
+
+//Sorting methods :
+// const names = ["Manvith","Varun","Mike","Abhi"]
+const names = [5,66,6,21,30]// While dealing with the numbers it will only into the first digit of the element
+console.log(names.sort());//[ 21, 30, 5, 6, 66 ]
+
+console.log(people.sort((a,b)=>  a.age - b.age ))// Sort the Age
+
+console.log(people.sort((a, b) =>  a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1));// Sort the name
+
+console.log(people.sort((a, b) => new Date(a.dateOfBirth) - new Date(b.dateOfBirth)))// sort the dateOfBirth
+
+>>>>>>> main
