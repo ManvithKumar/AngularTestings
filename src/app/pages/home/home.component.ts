@@ -28,6 +28,11 @@ export class HomeComponent {
       
   //   })
   // }
+  Greeting()
+  {
+    console.log("Welcome Brother");
+    
+  }
 
 
 
