@@ -35,6 +35,8 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { KanbanboardComponent } from './components/kanbanboard/kanbanboard.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -75,7 +77,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     MatIconModule,
     NgbCollapseModule,
     NgbAccordionModule,
-  
+    CommonModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:Headers,multi:true}
