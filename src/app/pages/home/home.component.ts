@@ -2,9 +2,6 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router'
 import { users } from 'src/app/data/users.js'
 
-import { Observable,of } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,12 +14,9 @@ export class HomeComponent {
   currentPage = 0;
   pageSize = 5;
 
-  obj$ = new Observable<string>;
-  
   ngOnInit()
   {
     // this.loadData() 
-    this.obj$ = of("Manvith")
   }
   // loadData()
   // {
@@ -33,12 +27,15 @@ export class HomeComponent {
   //   })
   // }
 
+  //The greeting funciton will appear below soon:
+
 
 
   navigateToAbout()
   {
     this.router.navigate(['/about'],{queryParams:{id:990,name:'Manvith'}})
   }
+
 
 
 }
