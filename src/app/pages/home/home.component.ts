@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router'
 import { users } from 'src/app/data/users.js'
-import { PaginationService } from 'src/app/components/pagination/pagination.service';
+
 import { Observable,of } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
@@ -13,7 +13,6 @@ import { AsyncPipe } from '@angular/common';
 export class HomeComponent {
 
   private router = inject(Router);
-  private paginationService = inject(PaginationService)
   userData:any[]=[]
   currentPage = 0;
   pageSize = 5;

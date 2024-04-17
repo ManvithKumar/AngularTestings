@@ -12,11 +12,14 @@ export class PaginationComponent {
 @Input() pageSize = 0;
 @Input() data: any[] = [];
 resultData:any[]
+maxIndex:number
 @Output() eventEmition = new EventEmitter<any[]>();
 
 ngOnInit()
 {
   this.loadData() 
+  this.maxIndex = Math.round(this.data.length/this.pageSize)
+
 }
 emitResultData()
 {
