@@ -1,5 +1,7 @@
 <div> 
     <button (click)="prevPage()" class="btn btn-primary" [disabled]="currentPage === 0">Previous</button>
     <span>{{currentPage+1}}</span>
-    <button (click)="nextPage()" class="btn btn-primary" [disabled]="currentPage === maxIndex">Next</button>
+    <button (click)="nextPage()" class="btn btn-primary"
+    *ngIf="currentPage < maxIndex-1"
+    >Next</button>
 </div>
