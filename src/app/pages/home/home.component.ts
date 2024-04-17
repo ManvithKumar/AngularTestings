@@ -18,28 +18,16 @@ export class HomeComponent {
 
   ngOnInit()
   {
-    this.loadData() 
+    // this.loadData() 
   }
-  loadData()
-  {
-    this.paginationService.fetchData(this.currentPage,this.pageSize,users).subscribe((data)=>{
-      this.userData = data
-      console.log(this.userData);
+  // loadData()
+  // {
+  //   this.paginationService.fetchData(this.currentPage,this.pageSize,users).subscribe((data)=>{
+  //     this.userData = data
+  //     console.log(this.userData);
       
-    })
-  }
-
-  nextPage()
-  {
-    this.currentPage++;
-    this.loadData()
-  }
-
-  prevPage()
-  {
-    this.currentPage--;
-    this.loadData()
-  }
+  //   })
+  // }
 
 
 

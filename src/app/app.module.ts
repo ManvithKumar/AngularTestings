@@ -33,7 +33,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { KanbanboardComponent } from './components/kanbanboard/kanbanboard.component';
-
+import { PaginationComponent } from './components/pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +54,8 @@ import { KanbanboardComponent } from './components/kanbanboard/kanbanboard.compo
     FormFields,
     MyFormComponent,
     FormReactiveComponent,
-    KanbanboardComponent
+    KanbanboardComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
