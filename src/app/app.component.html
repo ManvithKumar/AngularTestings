@@ -21,17 +21,4 @@
 <!-- <app-my-form></app-my-form> -->
 <!-- <app-form-reactive></app-form-reactive> -->
 <!-- <app-kanbanboard></app-kanbanboard> -->
-<main class="d-flex">
-  <app-sidebar></app-sidebar>
-  <!-- <router-outlet></router-outlet> -->
-  <div>
-    <div *ngFor="let item of resData">
-      <p>{{ item.name }}</p>
-    </div>
-    <app-pagination
-      [currentPage]="0"
-      [pageSize]="5"
-      [data]="myData"
-      (eventEmition)="getMyTables($event)"></app-pagination>
-  </div>
-</main>
+
