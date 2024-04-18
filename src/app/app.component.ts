@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, ElementRef  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest, forkJoin } from 'rxjs';
 import { users } from 'src/app/data/users.js'
+
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,9 @@ export class AppComponent {
   resData:any[]
   alltodos: any;
   showSpinner = false;
+
+  @ViewChild('datePickerInput') datePickerInput: ElementRef;
+
 
   constructor(private http: HttpClient) {}
 
@@ -38,6 +42,12 @@ export class AppComponent {
       }
     );
   }
+
+  // ngAfterViewInit()
+  // {
+  //   this.datePickerInput.nativeElement.click;    
+  //    console.log(this.datePickerInput.nativeElement.onclick());
+  // }
 
   getMyTables(data:any)
   {
