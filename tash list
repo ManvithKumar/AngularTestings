@@ -1,0 +1,151 @@
+[33mcommit ee9110c4a9c7d1e923202171fc0fa9d72efc557c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mcorrector[m[33m)[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Wed Apr 17 16:10:06 2024 +0530
+
+    This a simple grettings
+
+[33mcommit 3fddf21cc4723ed988c1cb6805d8da61b2998a18[m[33m ([m[1;31morigin/corrector[m[33m)[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Wed Apr 17 14:45:47 2024 +0530
+
+    Added card and moving animations html file
+
+[33mcommit cacb56a0f13072930ffb529b15712ea6eac7d3af[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Wed Apr 17 10:10:22 2024 +0530
+
+    Pagination component created and made for reusable for different components
+
+[33mcommit 32fa077b0d8f05d9f050355fbe58a859fa952014[m
+Merge: ede8a43 a36907c
+Author: Manvith_Gatty <90497161+ManvithKumar@users.noreply.github.com>
+Date:   Wed Apr 17 09:34:08 2024 +0530
+
+    Merge pull request #4 from ManvithKumar/scriptCodes
+    
+    Script codes
+
+[33mcommit a36907c678765e1395c2cb2ad7d450302f31eff5[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Wed Apr 17 09:33:17 2024 +0530
+
+    Created a pagination component,but there is an issue in uimodule due to ngForOf
+
+[33mcommit 5ee6a35dee9591f883112e4eded9cd39b15142a9[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Tue Apr 16 17:16:08 2024 +0530
+
+    Added back the anagram and sorting programs back
+
+[33mcommit ede8a43fc8b8c7052227187883a63bd4eeca8097[m
+Merge: 5641ce1 f4b709e
+Author: Manvith_Gatty <90497161+ManvithKumar@users.noreply.github.com>
+Date:   Tue Apr 16 17:14:04 2024 +0530
+
+    Merge pull request #3 from ManvithKumar/scriptCodes
+    
+    Script codes
+
+[33mcommit f4b709ea64223559f10956de36524dc6e46aa531[m
+Merge: 2dcc6a7 5641ce1
+Author: Manvith_Gatty <90497161+ManvithKumar@users.noreply.github.com>
+Date:   Tue Apr 16 17:13:57 2024 +0530
+
+    Merge branch 'main' into scriptCodes
+
+[33mcommit 2dcc6a7aedf20bc9182411ebb6cd96abff74fdc4[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Tue Apr 16 17:11:48 2024 +0530
+
+    Added the carousel component built from scratch
+
+[33mcommit 5641ce19500fbaf7e77eb447b56e45b789089a2e[m
+Author: Manvith_Gatty <90497161+ManvithKumar@users.noreply.github.com>
+Date:   Tue Apr 16 16:34:10 2024 +0530
+
+    Create npm-grunt.yml
+
+[33mcommit a08e23490824687b94270069e0b0016d75418770[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Tue Apr 16 16:25:33 2024 +0530
+
+    Added home and about for testing dynamic query params in routing
+
+[33mcommit d047045d3034f316c487cbe017e0bb0aa14f931f[m
+Merge: c86d409 cea99c6
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Mon Apr 15 14:24:12 2024 +0530
+
+    Merge branch 'main' of https://github.com/ManvithKumar/AngularTestings
+
+[33mcommit c86d409974d7b22ff0ad2a83e640d6f620a59542[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Mon Apr 15 14:23:48 2024 +0530
+
+    Created a kanban board component and implemented dragstart
+
+[33mcommit cea99c627172cfb409d77500c36aee9caab07845[m
+Merge: 0442d7d 842b7f4
+Author: Manvith_Gatty <90497161+ManvithKumar@users.noreply.github.com>
+Date:   Mon Apr 15 11:47:21 2024 +0530
+
+    Merge pull request #2 from ManvithKumar/ManvithKumar-Admin
+    
+    Update jsCodes.txt by adding the sorting functions
+
+[33mcommit 842b7f4dd13b470f1e14abf96df63df7540cdb53[m[33m ([m[1;31morigin/ManvithKumar-Admin[m[33m)[m
+Author: Manvith_Gatty <90497161+ManvithKumar@users.noreply.github.com>
+Date:   Mon Apr 15 11:47:03 2024 +0530
+
+    Update jsCodes.txt by adding the sorting functions
+
+[33mcommit 0442d7d18f479d4b0260df4018f97a28faee8aeb[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Thu Apr 11 16:43:44 2024 +0530
+
+    Added both lcm and hcf codes
+
+[33mcommit 28662a9fb062a31aa87d648efadced69b06a7911[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Thu Apr 11 16:40:17 2024 +0530
+
+    Added anagram code
+
+[33mcommit e28561e18e8a4ee50077fc2b7646abfd1a8411e4[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Thu Apr 11 16:36:35 2024 +0530
+
+    Added Sorting an array of strings by length program
+
+[33mcommit 5e7c5e6c79d20db77c286ee358519b7037f35f24[m
+Merge: e2db30a bdefd4e
+Author: Manvith_Gatty <90497161+ManvithKumar@users.noreply.github.com>
+Date:   Thu Apr 11 16:29:23 2024 +0530
+
+    Merge pull request #1 from ManvithKumar/scriptCodes
+    
+    Revsere string
+
+[33mcommit bdefd4e480c671cd2d51105c13a3a985cdb53457[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Thu Apr 11 16:27:56 2024 +0530
+
+    Revsere string
+
+[33mcommit e2db30a3bfc7b3004b33e08833958f7334bb5744[m
+Author: Manvith_Gatty <90497161+ManvithKumar@users.noreply.github.com>
+Date:   Thu Apr 11 16:10:37 2024 +0530
+
+    Ive uploaded the new js codes
+
+[33mcommit ea5789a8c8ab3a5f63262f4246abc9eb64d7af4c[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Thu Apr 11 16:06:22 2024 +0530
+
+    My first commit in test git
+
+[33mcommit b917e98a012616b15aed00cc38a713c2119787e4[m
+Author: U Manvith Kumar <Manvith.Kumar@novigo.com>
+Date:   Fri Feb 23 14:35:42 2024 +0530
+
+    initial commit

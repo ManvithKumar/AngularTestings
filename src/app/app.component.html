@@ -21,16 +21,4 @@
 <!-- <app-my-form></app-my-form> -->
 <!-- <app-form-reactive></app-form-reactive> -->
 <!-- <app-kanbanboard></app-kanbanboard> -->
-<router-outlet></router-outlet>
-<div *ngFor="let item of resData">
-    <p>{{item.name}}</p>
-</div>
-
-
-<app-pagination [currentPage]="0" [pageSize]="5" [data]="myData" (eventEmition)="getMyTables($event)" ></app-pagination>
-<div resizable style="width: 300px; border: 1px solid #ccc;">
-   Manvith Kumar
-  </div>
-  <input #datePickerInput type="date">
-  
 

@@ -34,7 +34,7 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { KanbanboardComponent } from './components/kanbanboard/kanbanboard.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
-import { ResizableDivDirective } from './directive/resizable-div.directive';
+n
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +57,7 @@ import { ResizableDivDirective } from './directive/resizable-div.directive';
     FormReactiveComponent,
     KanbanboardComponent,
     PaginationComponent,
-    ResizableDivDirective
+
   ],
   imports: [
     BrowserModule,
@@ -74,7 +74,7 @@ import { ResizableDivDirective } from './directive/resizable-div.directive';
     MatIconModule,
     NgbCollapseModule,
     NgbAccordionModule,
-  
+    CommonModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:Headers,multi:true}

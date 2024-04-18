@@ -1,5 +1,5 @@
 import { Component, Input, inject,Output,EventEmitter } from '@angular/core';
-import { PaginationService } from './pagination.service';
+import { Observable,of } from 'rxjs';
 
 @Component({
   selector: 'app-pagination',
@@ -12,13 +12,14 @@ export class PaginationComponent {
 @Input() pageSize = 0;
 @Input() data: any[] = [];
 resultData:any[]
+maxIndex:number
 @Output() eventEmition = new EventEmitter<any[]>();
-
-paginationService = inject(PaginationService);
 
 ngOnInit()
 {
   this.loadData() 
+  this.maxIndex = Math.round(this.data.length/this.pageSize)
+
 }
 emitResultData()
 {
@@ -26,11 +27,19 @@ emitResultData()
 } 
 loadData()
 {
-  this.paginationService.fetchData(this.currentPage,this.pageSize,this.data).subscribe((data)=>{
+  this.fetchData(this.currentPage,this.pageSize,this.data).subscribe((data)=>{
     this.resultData = data
     this.emitResultData()
   })
 }
+
+fetchData(page: number, pageSize: number,data:any[]): Observable<string[]> {
+  const startIndex = page * pageSize;
+  const endIndex = startIndex + pageSize;
+  const pageData = data.slice(startIndex, endIndex);
+  return of(pageData);
+}
+
 
 nextPage()
 {
